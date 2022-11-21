@@ -1,0 +1,15 @@
+[LECTURA]
+Lector=Diana
+Numero=1
+[DATOS]
+CampPescMuestra=1
+Especie=Ruivo
+[INDIVIDUO]
+NSerie=1
+Talla=20,4
+Peso=77
+Sexo=Macho
+[OTOLITO]
+Posicion=Izquierdo
+Tipo=Sagitta
+Tamaño=540,0275
