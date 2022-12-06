@@ -15,7 +15,7 @@ import cv2
 teste_05 = io.imread('photos/bios/GUU-Deneb-Amo2-21Jan08-49-20,9-2-0,5.jpg')
 teste_06 = io.imread('photos/bios/GUU-Deneb-Amo2-21Jan08-54-21-2-0,5.jpg')
 
-hpf = teste_06 - cv2.GaussianBlur(teste_06,(101,101),0) + 0
+hpf = teste_06 - cv2.GaussianBlur(teste_06,(101,101),0) + 127
 
 plt.imshow(hpf, cmap=plt.cm.gray)
 plt.show()
