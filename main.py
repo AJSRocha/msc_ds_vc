@@ -207,7 +207,6 @@ def processador(imagem,
         ax[1,0].imshow(otolito, cmap = plt.cm.gray)
         # centroide, borda e linha de perfil do otolito
 
-        #ax[1,1].imshow(skimage.color.label2rgb(skeleton, colapsado*mascara)) # versao original com mascara
         ax[1,1].imshow(colapsado, cmap = plt.cm.gray)
         ax[1,1].plot(origin, dest, linewidth = 5, color = 'r')
         ax[1,1].scatter(px[1], px[0], label='graph center')
@@ -221,7 +220,6 @@ def processador(imagem,
         # perfil desenhado do otolito
         ax[1,2].plot(profile)
         # histograma do perfil
-        #ax[2,0].plot(p_bin[0:-1], p_hist)
 
         ax[2,1].imshow(hpf, cmap = plt.cm.gray)
         ax[2,1].plot(origin, dest, linewidth = 5, color = 'r')
@@ -235,7 +233,6 @@ def processador(imagem,
 
         ax[2,2].plot(profile_hpf)
         # histograma do perfil
-        #ax[2,0].plot(p_bin[0:-1], p_hist)
 
         ax[2,0].plot(smoothed)
         for pico in picos[0]:
@@ -252,18 +249,15 @@ def processador(imagem,
             ax.imshow(hpf, cmap = plt.cm.gray)
         ax.plot(origin, dest, linewidth = 5, color = 'r')
         ax.scatter(px[1], px[0], label='graph center')
-        #ax.scatter(centroid[1], centroid[0], label='centroid')
-        #ax.legend()
-        #plt.set_axis_off()
-        #plt.set_title('graph center vs centroid')
+
         for contour in borda:
             ax.plot(contour[:, 1], contour[:, 0], linewidth=4, color = 'r')
-        dist = 0
+
         for anel in transicoes:
             dist = anel
             circulo = plt.Circle((px[1], px[0]), radius=dist, color='yellow', fill = False)
             ax.add_patch(circulo)
-        dist = 0
+
         for anel in transicoes_validas:
             dist = anel
             circulo = plt.Circle((px[1], px[0]), radius=dist, color='green', fill = False)
